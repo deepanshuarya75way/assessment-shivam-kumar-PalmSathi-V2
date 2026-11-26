@@ -58,6 +58,8 @@ export function runMatching(batches, mills, options = {}) {
     const candidates = [];
     for (const mill of millState) {
       for (const slot of mill.slots) {
+        const min = estimateTravelMinutes(batch.plotLocation,mill.location)+30;
+        if(+new Date(slot.slotTime) < Date.now()+min*60000) continue;
         if (slot.remainingKg < batch.quantityKg) continue;
         const projected = projectedFreshnessAtSlot(batch, slot.slotTime);
         if (projected < minFreshnessThreshold) continue;

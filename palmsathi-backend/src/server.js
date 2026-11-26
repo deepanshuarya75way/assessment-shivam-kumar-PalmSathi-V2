@@ -6,6 +6,7 @@ import http from "http";
 import { connectDB } from "./config/db.js";
 import { setupSockets } from "./sockets/index.js";
 import { startCronJobs } from "./services/cronJobs.js";
+import transitPoolRoutes from "./routes/transitPoolRoutes.js"
 
 import authRoutes from "./routes/authRoutes.js";
 import plotRoutes from "./routes/plotRoutes.js";
@@ -44,6 +45,7 @@ app.use("/api/subsidy", subsidyRoutes);
 app.use("/api/wallet", walletRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/transit-pools",transitPoolRoutes);
 
 const httpServer = http.createServer(app);
 setupSockets(httpServer, app);

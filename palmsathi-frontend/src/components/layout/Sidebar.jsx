@@ -15,6 +15,7 @@ const navItems = [
     { icon: FileText, label: "Subsidies", tab: "subsidies" },
     { icon: Coins, label: "Wallet", tab: "wallet" },
     { icon: MessageCircle, label: "PalmSathi Bot", tab: "chatbot" },
+    {icon:Truck, label:"Shared Transit", tab:"transit"},
 ];
 
 export default function Sidebar({ activeTab, onTabChange, walletPoints, isOpen, onClose }) {

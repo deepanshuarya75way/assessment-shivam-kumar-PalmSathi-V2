@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import TransitBoard from "@/components/modules/TransitBoard";
 import {
     Sprout, Building2, Zap, TrendingUp,
     Plus, CheckCircle, AlertCircle, Menu, Palmtree
@@ -110,6 +111,7 @@ export default function Dashboard() {
                     <div className="space-y-8">
 
                         {/* Header — hidden on chatbot tab */}
+                        {activeTab === "transit" && <TransitBoard/>}
                         {activeTab !== "chatbot" && (
                             <div>
                                 <h1 className="font-heading font-bold text-2xl text-forest">
