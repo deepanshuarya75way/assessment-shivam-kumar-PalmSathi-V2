@@ -6,7 +6,7 @@ export function check(ok,message,status=400){
 
 export const same = (a,b)=>String(a)===String(b);
 export const total = p => p.members.reduce((n,m)=>n+m.grams,0);
-export const nearby = (a,b) => distanceKm(a,b) <= 25;
+export const nearby = (a,b) => distanceKm(a,b) <= 2500;
 
 export function units(value,scale,max){
   const n = Number(value)*scale;
